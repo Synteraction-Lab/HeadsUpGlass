@@ -57,7 +57,11 @@ Android app for smart glasses
 - Android context: https://blog.mindorks.com/understanding-context-in-android-application-330913e32514 
 - Dagger: https://google.github.io/dagger/android.html, https://guides.codepath.com/android/dependency-injection-with-dagger-2
 - RESTful API: https://github.com/NationalBankBelgium/REST-API-Design-Guide/wiki,  https://github.com/Microsoft/api-guidelines
+- 3rd party icons used: 
 
 
+## Related publications
+- [EYEditor: Towards On-the-Go Heads-Up Text Editing Using Voice and Manual Input](https://doi.org/10.1145/3313831.3376173), CHI'20
+- [Ubiquitous Interactions for Heads-Up Computing: Understanding Users’ Preferences for Subtle Interaction Techniques in Everyday Settings](https://doi.org/10.1145/3447526.3472035), MobileHCI'21
 
 
