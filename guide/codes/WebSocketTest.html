@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Web Socket testing</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      $(function () {
+        var exampleSocket = new WebSocket("ws://192.168.43.47:9090/displays");
+
+        $('form').submit(function(e){
+          e.preventDefault(); // prevents page reloading
+          var msg = {
+            heading: "WebSocket",
+            subheading: "WebSocket:Testing",
+            content: $('#m').val()
+          }
+
+          exampleSocket.send(JSON.stringify(msg));
+          $('#m').val('');
+          return false;
+        });
+        // exampleSocket.onopen = function (event) {
+        //   exampleSocket.send("Starting message"); 
+        // };
+
+        exampleSocket.onmessage = function (event) {
+          console.log(event.data);
+          console.log(event);
+        }
+      });
+    </script>
+  </body>
+</html>

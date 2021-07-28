@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Custom Attributes for use, Needed to ensure custom duplicate values in the Style.xml can be found properly. -->
+    <attr name="imageHeaderTintColor" format="reference" />
+    <attr name="valueTextColor" format="reference" />
+    <attr name="backgroundColor" format="reference" />
+    <attr name="circleColorNormal" format="reference" />
+    <attr name="selectionColor" format="reference" />
+</resources>

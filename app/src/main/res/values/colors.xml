@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#008577</color>-->
+    <!--<color name="colorPrimaryDark">#00574B</color>-->
+    <!--<color name="colorAccent">#D81B60</color>-->
+
+    <!--You can find this color on the HUD.RESOURCE Too. When ever possible use the Resource from
+   HUD.RESOURCES. For more information on color read the Vuzix Blade UX Style Guide at:
+   https://www.vuzix.com/Developer/KnowledgeBase/Detail/1068 -->
+    <color name="colorPrimary">@color/vuzix_green</color>
+    <color name="colorPrimaryDark">@color/hud_white</color>
+    <color name="colorAccent">@color/hud_blue</color>
+
+    <color name="vuzix_green">#00FF7D</color>
+    <color name="vuzix_white">#FFFFFF</color>
+    <color name="vuzix_yellow">#F2F100</color>
+    <color name="vuzix_red">#FC101B</color>
+</resources>

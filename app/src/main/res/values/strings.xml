@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">HeadsUpGlass</string>
+    <string name="main_title_message">Starting HeadsUpGlass</string>
+    <string name="displayProfileSubHeading">SubHeading</string>
+    <string name="displayProfileContent">Content</string>
+    <string name="displayProfileHeading">Heading</string>
+    <string name="ble">BLE</string>
+    <string name="display">DISPLAY</string>
+    <string name="ble_connected">Connected</string>
+    <string name="ble_disconnected">Disconnected</string>
+    <string name="textBleBroadcast">Broadcasting</string>
+    <string name="btnBack">Back</string>
+    <string name="textRequireWifi">Need Wifi</string>
+    <string name="cameraTakePhoto">Taking a Photo</string>
+    <string name="cameraPreview">Camera Preview</string>
+    <string name="cameraRecordingStarting">Recording Starting</string>
+    <string name="cameraRecordingStopping">Recording Stopping</string>
+    <string name="cameraRecording">Recording In Progress</string>
+    <string name="textImageReview">Image Review</string>
+    <string name="textVideoReview">Video Review</string>
+</resources>

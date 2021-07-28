@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hci.nip.android.ui.DisplayActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/displayProfileHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/hud_transparent"
+            android:text="@string/displayProfileHeading"
+            android:textSize="36sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/displayProfileSubheading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/hud_transparent"
+            android:text="@string/displayProfileSubHeading"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/displayProfileContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/hud_transparent"
+            android:text="@string/displayProfileContent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

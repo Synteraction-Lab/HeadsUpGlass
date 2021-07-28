@@ -1,0 +1,170 @@
+apply plugin: 'com.android.application'
+
+// google Speech-toText
+apply plugin: 'com.google.protobuf'
+ext {
+    grpcVersion = '1.4.0'
+}
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.hci.nip.glass"
+        minSdkVersion 22
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    // ref: https://developer.android.com/studio/test
+    defaultConfig {
+        // Specifies the application ID for the test APK.
+        testApplicationId "com.nus.hci.test.bladeheadpiece"
+        // Specifies the fully-qualified class name of the test instrumentation runner.
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+        // If set to 'true', enables the instrumentation class to start and stop profiling.
+        // If set to false (default), profiling occurs the entire time the instrumentation
+        // class is running.
+        testHandleProfiling true
+        // If set to 'true', indicates that the Android system should run the instrumentation
+        // class as a functional test. The default value is 'false'
+        testFunctionalTest true
+    }
+
+    // Encapsulates options for running tests.
+    testOptions {
+        // Changes the directory where Gradle saves test reports. By default, Gradle saves test reports
+        // in the path_to_your_project/module_name/build/outputs/reports/ directory.
+        // '$rootDir' sets the path relative to the root directory of the current project.
+        reportDir "$rootDir/test-reports"
+        // Changes the directory where Gradle saves test results. By default, Gradle saves test results
+        // in the path_to_your_project/module_name/build/outputs/test-results/ directory.
+        // '$rootDir' sets the path relative to the root directory of the current project.
+        resultsDir "$rootDir/test-results"
+
+        // Encapsulates options for local unit tests.
+        unitTests {
+            // By default, local unit tests throw an exception any time the code you are testing tries to access
+            // Android platform APIs (unless you mock Android dependencies yourself or with a testing
+            // framework like Mockito). However, you can enable the following property so that the test
+            // returns either null or zero when accessing platform APIs, rather than throwing an exception.
+            returnDefaultValues true
+
+            // Encapsulates options for controlling how Gradle executes local unit tests. For a list
+            // of all the options you can specify, read Gradle's reference documentation.
+            all {
+                // Sets JVM argument(s) for the test JVM(s).
+                jvmArgs '-XX:MaxPermSize=256m'
+
+                // You can also check the task name to apply options to only the tests you specify.
+                if (it.name == 'testDebugUnitTest') {
+                    systemProperty 'debug', 'true'
+                }
+            }
+        }
+
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.github.NUS-HCILab:NIPBase:v1.0'
+
+    // ref: (Vuzix Blade) https://www.vuzix.com/Developer/Dashboard/Blade-Code-Samples
+    implementation 'com.vuzix:hud-actionmenu:1.1'
+    implementation 'com.vuzix:hud-resources:1.1'
+    implementation 'com.vuzix:haptics:1.0'
+
+    // android support libraries
+    implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
+
+    // ref: https://github.com/square/okhttp
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+
+    // https://github.com/square/retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    // ref: https://github.com/google/gson ('com.google.code.gson:gson:2.8.5')
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    // ref: https://github.com/google/dagger
+    implementation 'com.google.dagger:dagger:2.29.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.29.1'
+    implementation 'com.google.dagger:dagger-android:2.29.1'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.29.1'
+
+    // ref: https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/Speech
+    // gRPC
+    implementation "io.grpc:grpc-okhttp:$grpcVersion"
+    implementation "io.grpc:grpc-protobuf-lite:$grpcVersion"
+    implementation "io.grpc:grpc-stub:$grpcVersion"
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+    protobuf 'com.google.protobuf:protobuf-java:3.10.0'
+    // OAuth2 for Google API
+    implementation('com.google.auth:google-auth-library-oauth2-http:0.21.1') {
+        exclude module: 'httpclient'
+    }
+
+    // logging
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'com.github.tony19:logback-android:2.0.0'
+
+    // testing
+    testImplementation 'junit:junit:4.13'
+    testImplementation 'org.testng:testng:6.14.3'
+    testImplementation 'org.mockito:mockito-core:2.25.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.3.0'
+    }
+    plugins {
+        javalite {
+            artifact = "com.google.protobuf:protoc-gen-javalite:3.0.0"
+        }
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
+        }
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.plugins {
+                javalite {}
+                grpc {
+                    // Options added to --grpc_out
+                    option 'lite'
+                }
+            }
+        }
+    }
+}
+
+// Google Key: https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/Speech
+task copySecretKey(type: Copy) {
+    def File secretKey = file "$System.env.GOOGLE_APPLICATION_CREDENTIALS"
+    from secretKey.getParent()
+    include secretKey.getName()
+    into 'src/main/res/raw'
+    rename secretKey.getName(), "credential.json"
+}
+preBuild.dependsOn(copySecretKey)

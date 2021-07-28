@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="HudTheme">
+        <!-- Customize your theme here. -->
+        <item name="imageHeaderTintColor">@color/hud_green</item>
+        <item name="valueTextColor">@color/hud_white</item>
+        <item name="backgroundColor">@color/hud_dark_gray</item>
+        <item name="circleColorNormal">@color/hud_transparent</item>
+        <item name="selectionColor">@color/hud_green</item>
+    </style>
+
+    <style name="AppTheme.Light" parent="HudTheme.Light">
+        <!-- Customize your theme here. -->
+        <item name="imageHeaderTintColor">@color/hud_transparent</item>
+        <item name="valueTextColor">@color/hud_transparent</item>
+        <item name="backgroundColor">@color/hud_transparent</item>
+        <item name="circleColorNormal">@color/hud_dark_gray</item>
+        <item name="selectionColor">@color/hud_transparent</item>
+    </style>
+
+</resources>

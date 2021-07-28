@@ -1,0 +1,18 @@
+package com.hci.nip.android.sensors.model;
+
+public enum TouchBarEventType {
+    ONE_FINGER_TAP,
+    ONE_FINGER_SWIPE_FORWARD,
+    ONE_FINGER_SWIPE_BACKWARD,
+    ONE_FINGER_SWIPE_UP,
+    ONE_FINGER_SWIPE_DOWN,
+    ONE_FINGER_HOLD_ONE_SECOND,
+
+    TWO_FINGER_TAP,
+    TWO_FINGER_SWIPE_FORWARD,
+    TWO_FINGER_SWIPE_BACKWARD,
+    TWO_FINGER_SLIDE_UP,
+    TWO_FINGER_SLIDE_DOWN,
+    TWO_FINGER_HOLD_ONE_SECOND, // can not use (Home)
+    UNKNOWN,
+}

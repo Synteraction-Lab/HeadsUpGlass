@@ -1,0 +1,31 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+/test-results
+
+.project
+.classpath
+.settings
+
+
+proguard/
+
+# Log Files
+*.log
+
+# Android Studio captures folder
+captures/
+
+# lint
+/lint
+
+# credentials
+app/src/main/res/raw/credential.json
+
+# database schemas
+app/schemas/
