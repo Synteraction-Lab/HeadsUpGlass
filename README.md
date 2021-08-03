@@ -4,6 +4,7 @@ Android app for smart glasses
 - Support RESTful APIs, Web Sockets or BLE to communicate with clients/devices/sensors/actuators
 - Initially this was built for the Vuzix Blade smart glasses. Later modified to support any smart glasses running on Android (tested with Android 5.1 and 6)
 - Depending on the display resolution, adjust your (Android) Activities
+- If you have any questions or found any bugs, feel free to create a issue
 
 
 ## Documentation

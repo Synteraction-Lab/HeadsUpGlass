@@ -1,4 +1,4 @@
-package com.nus.hci.bladeheadpiece;
+package com.hci.nip.android;
 
 
 import org.testng.annotations.Test;
