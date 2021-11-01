@@ -1,5 +1,5 @@
 # HeadsUpGlass
-Android app framework for smart glasses
+Android app framework for smart glasses (a clone of private repo [NIPGlass](https://github.com/NUS-HCILab/NIPGlass))
 - A server to communicate with clients
 - Support RESTful APIs, Web Sockets or BLE to communicate with clients/devices/sensors/actuators
 - Initially this was built for the Vuzix Blade smart glasses. Later modified to support any smart glasses running on Android (tested with Android 5.1 and 6)
