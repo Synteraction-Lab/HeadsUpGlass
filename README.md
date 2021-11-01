@@ -1,5 +1,5 @@
 # HeadsUpGlass
-Android app for smart glasses
+Android app framework for smart glasses
 - A server to communicate with clients
 - Support RESTful APIs, Web Sockets or BLE to communicate with clients/devices/sensors/actuators
 - Initially this was built for the Vuzix Blade smart glasses. Later modified to support any smart glasses running on Android (tested with Android 5.1 and 6)
@@ -7,14 +7,19 @@ Android app for smart glasses
 - If you have any questions or found any bugs, feel free to create a issue
 
 
-## Related publications
-- [EYEditor: Towards On-the-Go Heads-Up Text Editing Using Voice and Manual Input](https://doi.org/10.1145/3313831.3376173), CHI'20
+## Related Publications
+- [EYEditor: Towards On-the-Go Heads-Up Text Editing Using Voice and Manual Input](https://doi.org/10.1145/3313831.3376173), CHI'20, See [Eyeditor](https://github.com/NUS-HCILab/Eyeditor)
 - [Ubiquitous Interactions for Heads-Up Computing: Understanding Users’ Preferences for Subtle Interaction Techniques in Everyday Settings](https://doi.org/10.1145/3447526.3472035), MobileHCI'21
 
 
 ## Documentation
 - See [Logical Design](https://docs.google.com/document/d/1gdXW0ksE7j95bPe-f9ssFdg3P_WM-jFo96uOsl2pjFU/view?usp=sharing) to understand the architecture and APIs
-- See the `guide` directory for code samples
+- See the [guide](guide) directory for code samples
+- If you want connect with mobile phone, use [NIPMobile](https://github.com/NUS-HCILab/NIPMobile)
+
+
+## Contact person
+- [Nuwan Janaka](https://www.nus-hci.org/team/nuwan-janaka/) ([In](https://www.linkedin.com/in/nuwan-janaka/))
 
 
 ## Requirements
