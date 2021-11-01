@@ -13,7 +13,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.hci.nip.android.ui.BLEBroadcastActivity;
-import com.hci.nip.android.ui.DisplayActivity;
+import com.hci.nip.android.ui.DisplayEdiTalkActivity;
 import com.hci.nip.android.util.FileUtil;
 import com.hci.nip.android.util.NetworkUtils;
 import com.hci.nip.glass.R;
@@ -64,14 +64,9 @@ public class MainActivity extends BaseActivity {
 
     // TODO: Do we need this?
     private void initializeUIListeners() {
-        Button btnBLE = findViewById(R.id.btnBLE);
-        btnBLE.setOnClickListener(v -> {
-            startActivity(new Intent(this, BLEBroadcastActivity.class));
-        });
-
         Button btnDisplay = findViewById(R.id.btnDisplay);
         btnDisplay.setOnClickListener(v -> {
-            startActivity(new Intent(this, DisplayActivity.class));
+            startActivity(new Intent(this, DisplayEdiTalkActivity.class));
         });
     }
 

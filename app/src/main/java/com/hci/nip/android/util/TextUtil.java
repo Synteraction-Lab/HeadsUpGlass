@@ -1,7 +1,11 @@
 package com.hci.nip.android.util;
 
+import android.content.Context;
+import android.os.Build;
 import android.text.Html;
 import android.text.Spanned;
+
+import com.pixplicity.htmlcompat.HtmlCompat;
 
 public class TextUtil {
 
@@ -17,8 +21,28 @@ public class TextUtil {
         if (htmlString == null) {
             return null;
         }
-        return Html.fromHtml(htmlString);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return Html.fromHtml(htmlString, Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            return Html.fromHtml(htmlString);
+        }
     }
+
+
+    /**
+     * ref: https://github.com/Pixplicity/HtmlCompat
+     * TODO: DO NOT use this with Android > 24
+     * @param context
+     * @param htmlString
+     * @return
+     */
+    public static Spanned getFormattedHtmlString(Context context, String htmlString) {
+        if (htmlString == null) {
+            return null;
+        }
+        return HtmlCompat.fromHtml(context, htmlString, HtmlCompat.FROM_HTML_MODE_LEGACY);
+    }
+
 
     /**
      * <p> Find the Levenshtein distance between two Strings.</p>

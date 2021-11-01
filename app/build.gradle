@@ -9,7 +9,7 @@ ext {
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.hci.nip.glass"
+        applicationId "com.hci.nip.editalk"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
@@ -91,6 +91,9 @@ dependencies {
 
     // android support libraries
     implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
+
+    // ref: (depreciated) https://github.com/Pixplicity/HtmlCompat
+    implementation 'com.pixplicity.htmlcompat:library:1.1.1'
 
     // ref: https://github.com/square/okhttp
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'

@@ -31,6 +31,7 @@
         android:theme="@style/AppTheme">
 
         <activity android:name="com.hci.nip.android.ui.DisplayActivity" />
+        <activity android:name="com.hci.nip.android.ui.DisplayEdiTalkActivity" />
         <activity android:name="com.hci.nip.android.ui.VideoReview" />
 
         <service
