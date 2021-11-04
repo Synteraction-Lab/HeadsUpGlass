@@ -15,6 +15,7 @@ Android app framework for smart glasses (a clone of private repo [NIPGlass](http
 ## Documentation
 - See [Logical Design](https://docs.google.com/document/d/1gdXW0ksE7j95bPe-f9ssFdg3P_WM-jFo96uOsl2pjFU/view?usp=sharing) to understand the architecture and APIs
 - See the [guide](guide) directory for code samples
+- See the [repo's introduction](https://drive.google.com/drive/u/1/folders/1s8HtdiZvr44UE3VBV1INqBS8Hf0BLAdC)
 - If you want connect with mobile phone, use [NIPMobile](https://github.com/NUS-HCILab/NIPMobile)
 
 
